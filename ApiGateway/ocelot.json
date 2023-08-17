@@ -1,16 +1,22 @@
 ﻿{
-  "ReRoutes": [
+  "Routes": [
     {
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7262
+          "Port": 7066
         }
       ],
-      "UpstreamPathTemplate": "/api1/{everything}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamPathTemplate": "/Gateway/{everything}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "SwaggerKey": "Gateway"
     },
     {
       "DownstreamPathTemplate": "/{everything}",
@@ -18,14 +24,68 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7116
+          "Port": 7073
         }
       ],
-      "UpstreamPathTemplate": "/api2/{everything}", 
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET" , "DELETE"]
+      "UpstreamPathTemplate": "/api1/{everything}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "SwaggerKey": "ApiOne"
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7075
+        }
+      ],
+      "UpstreamPathTemplate": "/ap2/{everything}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "SwaggerKey": "ApiTwo"
     }
-
   ],
-  "GlobalConfiguration": {
-  }
+  "SwaggerEndPoints": [
+    {
+      "Key": "Gateway",
+      "Config": [
+        {
+          "Name": "Api Gateway",
+          "Version": "v1",
+          "Url": "https://localhost:7066/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiOne",
+      "Config": [
+        {
+          "Name": "Api One",
+          "Version": "v1",
+          "Url": "https://localhost:7073/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiTwo",
+      "Config": [
+        {
+          "Name": "Api Two",
+          "Version": "v1",
+          "Url": "https://localhost:7075/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {}
 }
