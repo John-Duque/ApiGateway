@@ -10,7 +10,12 @@
         }
       ],
       "UpstreamPathTemplate": "/Gateway/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
       "SwaggerKey": "Gateway"
     },
     {
@@ -23,7 +28,12 @@
         }
       ],
       "UpstreamPathTemplate": "/api1/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
       "SwaggerKey": "ApiOne"
     },
     {
@@ -36,11 +46,15 @@
         }
       ],
       "UpstreamPathTemplate": "/ap2/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
       "SwaggerKey": "ApiTwo"
     }
   ],
-
   "SwaggerEndPoints": [
     {
       "Key": "Gateway",
@@ -72,9 +86,6 @@
         }
       ]
     }
-
   ],
-
-  "GlobalConfiguration": {
-  }
+  "GlobalConfiguration": {}
 }
